@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 4px 3px 4px rgba(36,50,112,0.66);
+    text-align: center;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem .5rem;
+    justify-content: center;
+}
+
+.container .container__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: .5rem;
+    width: 400px;
+    max-height: auto;
+    border: 6px solid #1360e2;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.container .container__card:hover {
+    transform: scale(1.02);
+}
+
+.container .container__card .card__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/loading.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+}
+
+.container .container__card .card__image img {
+    max-width: 100%;
+    height: inherit;
+}
+
+.container .container__card .card__values {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    
+}
+
+.container .container__card .card__values li {
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.container .container__card .card__values .values__title {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.container .container__card .card__values .values__price {
+    font-size: 2.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.container .container__card .card__values .values__description {
+    font-weight: 600;
+}
+
+.container .container__card .card__values .values__category {
+    font-weight: 600;
+}
+
+:root {
+    --star-size: 3rem;
+    --star-color: #ededed;
+    --star-background: #fbe300;
+  }
+  
+.container .container__card .card__values li .rate__stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times; 
+    line-height: 1;
+    
+    &::before {
+      content: '★★★★★';
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+footer {
+    margin-top: 1.5rem;
+    margin-bottom: 5px;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        width: 100%;
+    }
+}
