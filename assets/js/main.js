@@ -39,7 +39,7 @@ const renderCard = (data) => {
 
             const valuesPrice = document.createElement('li');
             valuesPrice.className = 'values__price';
-            valuesPrice.innerText = price;
+            valuesPrice.innerText = `$ ${price}`;
             cardValues.appendChild(valuesPrice);
 
             const valuesDescription = document.createElement('li');
@@ -58,6 +58,7 @@ const renderCard = (data) => {
             rateStars.className = 'rate__stars';
             rateStars.style = `--rating: ${rating.rate};`;
             rateStars.ariaLabel = `Classificação do produto: ${rating.rate} de 5 estrelas.`;
+            rateStars.title = `Classificação do produto: ${rating.rate} de 5 estrelas.`;
             valuesRate.appendChild(rateStars);
             cardValues.appendChild(valuesRate);
 
