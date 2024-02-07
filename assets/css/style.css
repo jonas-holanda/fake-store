@@ -27,12 +27,81 @@ header h1 {
     margin: auto;
 }
 
+.menu {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.menu .menu__btn,
+.menu .menu__category .category__btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    transition: 0.5s;
+}
+
+.menu .menu__btn:hover,
+.menu .menu__category .category__btn:hover {
+    transform: scale(1.3);
+}
+
+.menu .menu__btn {
+    background-color: #1360e2;
+}
+
+.menu .menu__category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.menu .menu__category .category__btn {
+    background-color: #4c9e66;
+}
+
+.menu .menu__category .category__list {
+    margin-top: 1rem;
+    display: none;
+    overflow: hidden;
+}
+
+.menu .menu__category .category__list #category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #1360e2;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1rem .5rem;
     justify-content: center;
+}
+
+.container .banner {
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
 }
 
 .container .container__card {
@@ -61,7 +130,6 @@ header h1 {
     align-items: center;
     width: 150px;
     height: 150px;
-    background-image: url('../images/loading.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -143,5 +211,10 @@ footer {
 
     .container {
         width: 100%;
+    }
+
+    .container .banner {
+        width: 80%;
+        height: auto;
     }
 }

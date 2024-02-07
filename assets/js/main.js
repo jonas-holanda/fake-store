@@ -1,5 +1,45 @@
 document.querySelector('#date').innerHTML = (new Date()).getFullYear();
 
+const productBtn = document.querySelector('.menu__btn');
+
+productBtn.addEventListener('click', () => getProducts());
+
+const list = document.querySelector('.category__btn');
+
+list.addEventListener('click', () => {
+    list.classList.toggle('active');
+    let cat = list.nextElementSibling;
+    if (cat.style.display === 'block') {
+        cat.style.display = 'none';
+    } else {
+        cat.style.display = 'block';
+    }
+
+})
+
+const category = document.querySelector('#category');
+
+category.addEventListener('change', (value) => {
+    const option = category.value
+    getCategories(option);
+});
+
+const getCategories = async (option) => {
+
+    if (option) {
+        const url = `https://fakestoreapi.com/products/category/${option}`;   
+        const response = await fetch(url);
+
+        if (response.status === 200) {
+            const data = await response.json();
+            renderCard(data);
+        } else {
+            renderCard(false);
+        }
+    }
+
+}
+
 const getProducts = async () => {
     const url = `https://fakestoreapi.com/products`;   
     const response = await fetch(url);
@@ -72,4 +112,3 @@ const renderCard = (data) => {
     }
 }
 
-getProducts();

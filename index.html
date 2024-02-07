@@ -9,15 +9,33 @@
 </head>
 <body>
     <header>
-        <h1>Produtos</h1>
+        <h1> <span class="iconify-inline" data-icon="heroicons:building-storefront"></span> Fake Store</h1>
     </header>
-    <main class="container">
-        <img src="./assets/images/loading.png" alt="" srcset="">
+    <main>
+        <section class="menu">
+            <button class="menu__btn">Listar todos os Produtos</button>
+            <div class="menu__category">
+                <button class="category__btn">Selecionar Categoria</button>
+                <div class="category__list">
+                    <select id="category">
+                        <option value="">Selecione Uma Categoria</option>
+                        <option value="electronics">Eletronicos</option>
+                        <option value="jewelery">Jóias</option>
+                        <option value="men's clothing">Roupas Masculinas</option>
+                        <option value="women's clothing">Roupas Femininas</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+           <img src="./assets/images/banner.webp" class="banner" alt="Banner da Fake Store">
+        </section>
     </main>
     <footer>
         <p>Copyright © <span id="date"></span>
         <a href="https://github.com/jonas-holanda" target="_blank">Jonas Holanda.</a> All Rights Reserved.</p>  
     </footer>
     <script src="./assets/js/main.js"></script>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 </body>
 </html>
