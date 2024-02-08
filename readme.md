@@ -1,5 +1,6 @@
 # Fake Store
 
+https://github.com/jonas-holanda/fake-store/assets/138180385/ea29ee4b-6d1d-4c04-adab-a5b8fb18f3c8
 
 **Uma listagem de produtos utilizando a API fakestore.**
 **Link da API: [https://fakestoreapi.com/docs](https://fakestoreapi.com/docs)**
