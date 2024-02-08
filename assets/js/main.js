@@ -25,8 +25,9 @@ category.addEventListener('change', (value) => {
 });
 
 const getCategories = async (option) => {
-
+    
     if (option) {
+        loading();
         const url = `https://fakestoreapi.com/products/category/${option}`;   
         const response = await fetch(url);
 
@@ -41,6 +42,7 @@ const getCategories = async (option) => {
 }
 
 const getProducts = async () => {
+    loading();
     const url = `https://fakestoreapi.com/products`;   
     const response = await fetch(url);
 
@@ -112,3 +114,7 @@ const renderCard = (data) => {
     }
 }
 
+const loading = () => {
+    const container = document.querySelector('.container');
+    container.innerHTML = `<img src="./assets/images/shopping-cart.gif" alt="loading">`;
+}
